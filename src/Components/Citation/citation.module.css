@@ -1,0 +1,26 @@
+.citation {
+    max-width: 1440px;
+    margin-top: 20px;
+}
+
+.citation__flexbox {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.citation__text {
+    padding: 100px 10px 20px 10px;
+    color: rgba(0, 0, 0, .8);
+    font-size: 2em;
+    line-height: 42px;
+    text-align: justify;
+}
+
+.citation__author {
+    color: rgba(0, 0, 0, .8);
+    font-size: 1em;
+    text-align: right;
+    padding-bottom: 100px;
+}
