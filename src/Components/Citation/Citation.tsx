@@ -1,45 +1,31 @@
-import React from "react";
+import React, {FC, useState, useEffect} from "react";
 import styles from "./citation.module.css";
 import { citationSchwarzenegger } from "../../consts/consts";
 
-type TState = {
-    quote: string;
-    author: string
-}
+const Citation: FC = (): JSX.Element => {
 
-class Citation extends React.Component<any, TState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            quote: 'There are no shortcuts—everything is reps, reps, reps.',
-            author: 'Arnold Schwarzenegger',
-        }
+    const [quote, setQuote] = useState<string>("There are no shortcuts—everything is reps, reps, reps.");
+    const [author, setAuthor] = useState<string>("Arnold Schwarzenegger");
 
-        this._getRandomCitation = this._getRandomCitation.bind(this);
-    }
+    useEffect(() => {
+        getRandomCitation(citationSchwarzenegger)  ;
+    }, [])
 
-    componentDidMount() {
-        this._getRandomCitation(citationSchwarzenegger);
-    }
-
-    _getRandomCitation(arr: {citation: string, author: string}[]) {
+    function getRandomCitation(arr: {citation: string, author: string}[]) {
         const arrIndex = Math.floor(Math.random() * arr.length);
-        this.setState({
-            quote: arr[arrIndex].citation,
-            author: arr[arrIndex].author
-        })
+        setQuote(arr[arrIndex].citation);
+        setAuthor(arr[arrIndex].author);
     }
 
-    render() {
         return (
             <section className={styles.citation}>
                 <div className={styles.citation__flexbox}>
-                    <p className={styles.citation__text}>{this.state.quote}</p>
-                    <cite className={styles.citation__author}>{this.state.author}</cite>
+                    <p className={styles.citation__text}>{quote}</p>
+                    <cite className={styles.citation__author}>{author}</cite>
                 </div>
             </section>
         );
-    }
+
 }
 
 export default Citation;
