@@ -24,3 +24,17 @@
     text-align: right;
     padding-bottom: 100px;
 }
+
+@media screen and (max-width: 1280px) {
+    .citation__flexbox {
+        width: 85%;
+    }
+
+    .citation__text {
+        padding-top: 70px;
+    }
+
+    .citation__author {
+        padding-bottom: 70px;
+    }
+}

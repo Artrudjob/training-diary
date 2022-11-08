@@ -1,9 +1,13 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import styles from "./menu.module.css";
 
 const Menu: FC = (): JSX.Element => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+
+    })
 
     function clickButton() {
         !isOpen ? setOpen(true) : setOpen(false);

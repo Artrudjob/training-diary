@@ -7,14 +7,15 @@ import { Outlet } from "react-router-dom";
 const Layout: FC = (): JSX.Element => {
     const [windowPosY, setWindowPosY] = useState<number>(0);
     const [miniHeader, setMiniHeader] = useState<boolean>(false);
+    const [invisibleHeader, setInvisibleHeader] = useState<boolean>(false);
 
     useEffect(() => {
         function handleScroll() {
             setWindowPosY(window.scrollY);
 
             (windowPosY < 110) ? setMiniHeader(false) : setMiniHeader(true);
+            (windowPosY > 870) ? setInvisibleHeader(true) : setInvisibleHeader(false);
         }
-        console.log(windowPosY);
         window.addEventListener("scroll", handleScroll);
 
         return () => {
@@ -24,7 +25,7 @@ const Layout: FC = (): JSX.Element => {
 
     return (
         <>
-            <Header miniHeader={miniHeader}/>
+            <Header miniHeader={miniHeader} invisibleHeader={invisibleHeader}/>
             <main className={styles.main}>
                 <Outlet/>
             </main>
