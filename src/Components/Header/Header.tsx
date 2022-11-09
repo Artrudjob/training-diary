@@ -1,5 +1,7 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import styles from "./header.module.css";
+import {useAppSelector} from "../../services/hooks";
+import {breakpoints} from "../../consts/consts";
 
 type TProps = {
     miniHeader: boolean,
@@ -8,18 +10,14 @@ type TProps = {
 
 const Header: FC<TProps> = ({miniHeader, invisibleHeader}): JSX.Element => {
 
-    const [innerWidth, setInnerWidth] = useState<number>(0);
+    const selector = useAppSelector(state => state.innerWidthReducer);
 
     const sizeHeader = miniHeader? styles.header__title_mini : styles.header__title;
     const visibilityHeader = invisibleHeader && styles.header__invisible;
 
-    useEffect(() => {
-        setInnerWidth(window.innerWidth);
-    });
-
     return (
         <>
-            {(innerWidth > 800) ?
+            {(selector > breakpoints.tablet) ?
                 <header className={styles.header}>
                     <h1 className={`${sizeHeader} ${visibilityHeader}`}>MAKE YOURSELF</h1>
                 </header>

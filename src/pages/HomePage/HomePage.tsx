@@ -1,26 +1,37 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import styles from "./homePage.module.css";
+
 import BackgroundVideo from "../../Components/BackgroundVideo/BackgroundVideo";
+import BackgroundImage from "../../Components/BackgroundImage/BackgroundImage";
 import Menu from "../../Components/Menu/Menu";
 import Citation from "../../Components/Citation/Citation";
-import backgroundImage from "../../assets/arnoldShvartsenegger.jpg"
+
+import {breakpoints} from "../../consts/consts";
+import {useAppSelector} from "../../services/hooks";
+import MenuMobile from "../../Components/MenuMobile/MenuMobile";
 
 const HomePage: FC = (): JSX.Element => {
 
-    const [innerWidth, setInnerWidth] = useState<number>(0);
+    const selector = useAppSelector(state => state.innerWidthReducer)
 
-    useEffect(() => {
-        setInnerWidth(window.innerWidth);
-    });
+    const toggleMenu = (handler: () => void) => {
+        handler();
+    }
 
     return (
         <div className={styles.homePage}>
-            {innerWidth > 660 ?
-                <BackgroundVideo/>
+            {selector > breakpoints.mobile ?
+                <>
+                    <BackgroundVideo/>
+                    <Menu toggleMenu={() => toggleMenu}/>
+                </>
                 :
-                <div className={styles.homePage_background_image} style={{backgroundImage: `url(${backgroundImage})`}}></div>
+                <>
+                    <BackgroundImage/>
+                    <MenuMobile toggleMenu={() => toggleMenu} />
+                </>
             }
-            <Menu/>
+
             <Citation/>
         </div>
     )
