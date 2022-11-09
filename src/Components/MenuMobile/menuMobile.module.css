@@ -1,0 +1,72 @@
+.menuMobile__button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 100px;
+    z-index: 2;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.menuMobile__button:hover {
+    opacity: .8;
+}
+
+.menuMobile__button:active {
+    opacity: .5;
+}
+
+.menuMobile__container {
+    background-color: rgba(255,255,255, .8);
+    border-radius: 10px;
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    width: 250px;
+    min-height: 270px;
+    z-index: 2;
+}
+
+.menuMobile__list {
+    list-style-type: none;
+}
+
+.menuMobile__text {
+    width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 15px;
+    color: black;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    opacity: 1;
+    border: 0 solid transparent;
+}
+
+.menuMobile__text:last-child {
+    margin-bottom: 10px;
+}
+
+.menuMobile__text:hover {
+    margin-top: 10px;
+    opacity: .8;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+.menuMobile__text:active {
+    opacity: .5;
+}
+
+.menuMobile__link {
+    text-decoration: none;
+}

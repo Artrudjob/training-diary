@@ -1,19 +1,25 @@
-import React, {FC, useState} from "react";
+import React, {FC, useRef, useState} from "react";
 import styles from "./menu.module.css";
+import {useOnClickOutside} from "../../services/hooks";
 
-const Menu: FC = (): JSX.Element => {
+type TProps = {
+    toggleMenu: (open: void) => void,
+}
+
+const Menu: FC<TProps> = ({toggleMenu}): JSX.Element => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
 
-    function clickButton() {
-        !isOpen ? setOpen(true) : setOpen(false);
-    }
+    const ref = useRef(null);
+    const refBtn = useRef(null);
+
+    useOnClickOutside(refBtn, ref, () => setOpen(false));
 
     return (
         <>
-            <button className={styles.menu__button} type={"button"} onClick={clickButton}>MENU</button>
+            <button ref={refBtn} className={styles.menu__button} type={"button"} onClick={() => toggleMenu(setOpen(!isOpen))}>MENU</button>
             {isOpen &&
-                <div className={styles.menu__container}>
+                <div className={styles.menu__container} ref={ref}>
                     <ul className={styles.menu__list}>
                         <li className={styles.menu__text}><a className={styles.menu__link}>Training diary</a></li>
                         <li className={styles.menu__text}><a className={styles.menu__link}>Body measurements</a></li>
