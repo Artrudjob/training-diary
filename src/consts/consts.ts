@@ -1,3 +1,8 @@
+export const breakpoints = {
+    tablet: 800,
+    mobile: 660
+}
+
 export const citationSchwarzenegger = [
     {
         citation: "There are no shortcuts—everything is reps, reps, reps.",
