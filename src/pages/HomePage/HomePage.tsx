@@ -14,21 +14,17 @@ const HomePage: FC = (): JSX.Element => {
 
     const selector = useAppSelector(state => state.innerWidthReducer)
 
-    const toggleMenu = (handler: () => void) => {
-        handler();
-    }
-
     return (
         <div className={styles.homePage}>
             {selector > breakpoints.mobile ?
                 <>
                     <BackgroundVideo/>
-                    <Menu toggleMenu={() => toggleMenu}/>
+                    <Menu/>
                 </>
                 :
                 <>
                     <BackgroundImage/>
-                    <MenuMobile toggleMenu={() => toggleMenu} />
+                    <MenuMobile/>
                 </>
             }
 

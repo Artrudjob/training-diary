@@ -1,25 +1,7 @@
-.menu__button {
+.menu__btnBox {
     position: absolute;
     top: 50px;
     left: 50px;
-    width: 100px;
-    z-index: 2;
-    text-align: center;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 2em;
-    color: white;
-    cursor: pointer;
-    transition: .4s ease-in-out;
-    opacity: 1;
-}
-
-.menu__button:hover {
-    opacity: .8;
-}
-
-.menu__button:active {
-    opacity: .5;
 }
 
 .menu__container {
@@ -44,7 +26,6 @@
     font-size: 1em;
     margin-top: 10px;
     padding: 15px;
-    color: white;
     cursor: pointer;
     transition: .4s ease-in-out;
     opacity: 1;
@@ -69,4 +50,5 @@
 
 .menu__link {
     text-decoration: none;
+    color: white;
 }

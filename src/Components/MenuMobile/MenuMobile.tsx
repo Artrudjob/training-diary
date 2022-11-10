@@ -1,12 +1,10 @@
 import React, {FC, useRef, useState} from "react";
 import styles from "./menuMobile.module.css";
 import {useOnClickOutside} from "../../services/hooks";
+import {NavLink} from "react-router-dom";
+import Button from "../Button/Button";
 
-type TProps = {
-    toggleMenu: (open: void) => void,
-}
-
-const MenuMobile: FC<TProps> = ({toggleMenu}) => {
+const MenuMobile: FC = () => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
     const ref = useRef(null);
@@ -16,11 +14,13 @@ const MenuMobile: FC<TProps> = ({toggleMenu}) => {
 
     return (
         <>
-            <button ref={refBtn} className={styles.menuMobile__button} onClick={() => toggleMenu(setOpen(!isOpen))} type={"button"}>MENU</button>
+            <div className={styles.menuMobile__btnBox}>
+                <Button text={"MENU"} refBtn={refBtn} click={() => setOpen(!isOpen)}/>
+            </div>
             {isOpen &&
                 <div className={styles.menuMobile__container} ref={ref}>
                     <ul className={styles.menuMobile__list}>
-                        <li className={styles.menuMobile__text}><a className={styles.menuMobile__link}>Training diary</a></li>
+                        <li className={styles.menuMobile__text}><NavLink to={"/trainingDiary"} className={styles.menuMobile__link}>Training diary</NavLink></li>
                         <li className={styles.menuMobile__text}><a className={styles.menuMobile__link}>Body measurements</a></li>
                     </ul>
                 </div>

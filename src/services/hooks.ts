@@ -8,7 +8,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useOnClickOutside = (refBtn: any, ref: any, handler: (e: MouseEvent) => void) => {
     useEffect(() => {
         const listener = (e: MouseEvent) => {
-            if (ref.current === e.target || ref.current.contains(e.target) || refBtn.current === e.target) {
+            if (ref.current === e.target || ref.current?.contains(e.target) || refBtn.current === e.target) {
                 return;
             }
 

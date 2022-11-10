@@ -1,24 +1,7 @@
-.menuMobile__button {
+.menuMobile__btnBox {
     position: absolute;
     top: 25px;
     left: 25px;
-    width: 100px;
-    z-index: 2;
-    text-align: center;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 2em;
-    color: white;
-    cursor: pointer;
-    transition: .4s ease-in-out;
-}
-
-.menuMobile__button:hover {
-    opacity: .8;
-}
-
-.menuMobile__button:active {
-    opacity: .5;
 }
 
 .menuMobile__container {
