@@ -1,9 +1,3 @@
-.menu__btnBox {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-}
-
 .menu__container {
     background-color: rgba(210, 207, 217, .3);
     border-radius: 10px;

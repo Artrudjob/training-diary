@@ -1,3 +1,15 @@
 .homePage {
     position: relative;
 }
+
+.homePage__btnBox {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.homePage__btnBox_mobile {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
