@@ -1,0 +1,19 @@
+.button {
+    width: 100px;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    opacity: 1;
+}
+
+.button:hover {
+    opacity: .8;
+}
+
+.button:active {
+    opacity: .5;
+}
