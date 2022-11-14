@@ -1,0 +1,15 @@
+.title {
+    position: relative;
+    max-width: 1440px;
+    width: 80%;
+    height: 140px;
+    margin: 0 auto;
+}
+
+.title__master {
+    width: 100%;
+    padding: 20px 0 20px 0;
+    font-size: 8em;
+    text-align: center;
+    color: rgba(0, 0, 0, .8);
+}
