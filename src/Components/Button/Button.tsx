@@ -3,15 +3,16 @@ import styles from "./button.module.css";
 
 type TProps = {
     text: string,
+    color: string
     refBtn:  any,
     click: () => void;
 }
 
 
-const Button: FC<TProps> = ({text, refBtn, click}) => {
+const Button: FC<TProps> = ({text, color, refBtn, click}) => {
 
     return (
-        <button className={styles.button} type={"button"} ref={refBtn} onClick={click}>{text}</button>
+        <button className={styles.button} style={{color: `${color}`}} type={"button"} ref={refBtn} onClick={click}>{text}</button>
     )
 }
 

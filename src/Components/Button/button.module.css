@@ -1,5 +1,5 @@
 .button {
-    width: 100px;
+    min-width: 100px;
     text-align: center;
     border: none;
     background-color: rgba(0, 0, 0, 0);

@@ -1,23 +1,4 @@
 .main {
     max-width: 1440px;
     margin: 0 auto;
-    border-top: 60px solid white;
-}
-
-@media screen and (max-width: 1280px) {
-    .main {
-        border-top: 50px solid white;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .main {
-        border-top: 30px solid white;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .main {
-        border-top: none;
-    }
 }
