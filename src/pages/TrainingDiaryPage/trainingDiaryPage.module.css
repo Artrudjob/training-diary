@@ -1,0 +1,85 @@
+.trainingDiary {
+    position: relative;
+    height: 800px;
+}
+
+.trainingDiary__container {
+    position: relative;
+    margin-top: 45px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.trainingDiary__btnBox {
+    width: 95%;
+    margin: 40px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trainingDiary__title {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: -1;
+    font-size: 3em;
+    text-align: center;
+    color: rgba(0, 0, 0, .8);
+}
+
+.trainingDiary__date {
+    display: flex;
+    align-items: center;
+}
+
+.trainingDiary_arrow_left {
+    margin-right: 7px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(135deg);
+}
+
+.trainingDiary_arrow_left:hover {
+    cursor: pointer;
+}
+
+.trainingDiary_arrow_right {
+    margin-left: 7px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(-45deg);
+}
+
+.trainingDiary_arrow_right:hover {
+    cursor: pointer;
+}
+
+.trainingDiary__btn {
+    background: transparent;
+    border: 2px solid rgba(0,0,0,0.2);
+    color: rgba(0, 0, 0, .8);
+    padding: 5px 15px;
+    font-size: 1em;
+    transition: .3s linear;
+}
+
+.trainingDiary__btn:not(:first-child) {
+    border-left: none;
+}
+
+.trainingDiary__btn:hover {
+    background: rgba(0,0,0, .8);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.trainingDiary__btn_active {
+    background: rgba(0,0,0, .8);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    color: rgba(255, 255, 255, 1);
+}
